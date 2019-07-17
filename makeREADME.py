@@ -8,7 +8,7 @@ import datetime
 from pypinyin import lazy_pinyin
 
 f = open('README.md','w',encoding='utf-8')
-f.write('# MetalDudu + docs\n') # 页面H1
+f.write('# 书评和笔记\n') # 页面H1
 files = os.listdir(os.getcwd())
 files.sort()
 
