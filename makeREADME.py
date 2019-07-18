@@ -17,15 +17,28 @@ for i in files:
     if (i[0] == '.'):
         pass #排除隐藏目录
     elif os.path.isdir(subpath):
-        f.write('\n\n## ' + i + '\n\n')#文件夹
+        f.write('\n\n## ' + i + '\n\n') #文件夹做为二级标题
+        f.write('|   |   |   |\n|---|---|---|\n|')
         subfiles = os.listdir(subpath)
         subfiles.sort(key=lambda char: lazy_pinyin(char)[0][0]) # 实现中文排序
+        l = 1 #计数器
+        outstr = '' # 输出表格部分
         for j in subfiles:
             if j != 'README.md':
                 if j != 'makeREADME.py':
-                    link = '- [' + j.replace('.md', '') + '](' + i + '/' + j + ')\n'
-                    f.write(link)
+                    link = '[' + j.replace('.md', '') + '](' + i + '/' + j + ')'
+                    if l % 3 == 0:
+                        outstr = outstr + link + '|\n|'
+                    else:
+                        outstr = outstr + link + '|'
+                    l = l + 1    
+
+        f.write(outstr)
+
+
+
+
 print ('done!')
 
-f.write('\n--- \n\nUPDATE: ' + str(datetime.date.today()))
+f.write('\n\n--- \n\nUPDATE: ' + str(datetime.date.today()))
 f.close()
