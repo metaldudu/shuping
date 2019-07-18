@@ -1,10 +1,8 @@
-Steal Like an Artist
+# Steal Like an Artist
  
-10 Things Nobody Told You About Being Creative
- 
-Austin Kleon
-
-> 2017.10.26 电子版
+- 书名：10 Things Nobody Told You About Being Creative
+- 作者：Austin Kleon
+- 时间：20171026 电子版
 
 ## Steal like an artist
 
