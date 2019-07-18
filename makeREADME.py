@@ -27,17 +27,13 @@ for i in files:
             if j != 'README.md':
                 if j != 'makeREADME.py':
                     link = '[' + j.replace('.md', '') + '](' + i + '/' + j + ')'
-                    if l % 3 == 0:
-                        outstr = outstr + link + '|\n|'
+                    if l % 4 == 0:
+                        outstr = outstr + link + '|\n|' # 倍数换行
                     else:
                         outstr = outstr + link + '|'
                     l = l + 1    
 
         f.write(outstr)
-
-
-
-
 print ('done!')
 
 f.write('\n\n--- \n\nUPDATE: ' + str(datetime.date.today()))
